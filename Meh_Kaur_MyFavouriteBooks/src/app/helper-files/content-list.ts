@@ -17,8 +17,8 @@ class ContentList {
         return this._items.length;
     }
     displayItem(index: number){
+        if (index >= 0 && index < this.items.length) {
         let conItem = this._items[index];
-        if (conItem){
         // console.log("Title:" +conItem.title);
         // console.log("Description:" +conItem.description);
         // console.log("Creator:" +conItem.creator);

@@ -46,4 +46,8 @@ export class ContentCardComponent {
     type: 'Self-Help'
   });
 }
+ngOnInit(): void {
+  let invalidIndexContent = this.contentList.displayItem(5);
+  console.log(invalidIndexContent);
+}
 }
