@@ -15,7 +15,7 @@ export class ContentCardComponent {
     title: 'It Ends with Us',
     description: 'Book about lovers',
     creator: 'Colleen Hoover',
-    imgUrl: 'itendswithus.jpg',
+    imgUrl: 'https://m.media-amazon.com/images/I/81s0B6NYXML._SL1500_.jpg',
     type: 'Romance'
   });
 
@@ -24,7 +24,7 @@ export class ContentCardComponent {
     title: 'November 9',
     description: 'A romantic novel by Colleen Hoover',
     creator: 'Colleen Hoover',
-    imgUrl: 'november9.jpg',
+    imgUrl: 'https://th.bing.com/th/id/R.c1e40ff37e3d96213b709aab0a6d8178?rik=0XEMC7MQYpBytw&pid=ImgRaw&r=0',
     type: 'Romance'
   });
 
@@ -33,7 +33,7 @@ export class ContentCardComponent {
     title: 'City of Bones',
     description: 'The first book in The Mortal Instruments series by Cassandra Clare',
     creator: 'Cassandra Clare',
-    imgUrl: 'cityofbones.jpg',
+    imgUrl: 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781481470308/city-of-bones-9781481470308_hr.jpg',
     type: 'Fantasy'
   });
 
@@ -42,7 +42,7 @@ export class ContentCardComponent {
     title: 'Think Like a Monk',
     description: 'A book on personal development and mindfulness by Jay Shetty',
     creator: 'Jay Shetty',
-    imgUrl: 'thinklikeamonk.jpg',
+    imgUrl: 'https://th.bing.com/th/id/OIP.J0pwUIV4-oyS_pMR90RK6gHaLY?rs=1&pid=ImgDetMain',
     type: 'Self-Help'
   });
 }
