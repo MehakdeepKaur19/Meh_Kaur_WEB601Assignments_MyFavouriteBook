@@ -1,4 +1,4 @@
-import { Content } from 'C:/Users/mehak/Documents/GitHub/Meh_Kaur_WEB601Assignments_MyFavouriteBooks/Meh_Kaur_MyFavouriteBooks/src/app/helper-files/content-interface';
+import { Content } from './content-interface';
 class ContentList {
     private _items: Content[];
     static contentCount =0;
