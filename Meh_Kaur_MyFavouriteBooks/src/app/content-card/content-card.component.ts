@@ -10,14 +10,7 @@ export class ContentCardComponent {
   contentList: ContentList;
 
   constructor() {
-    this.contentList = new ContentList({
-    id: 1,
-    title: 'It Ends with Us',
-    description: 'Book about lovers',
-    creator: 'Colleen Hoover',
-    imgUrl: 'https://m.media-amazon.com/images/I/81s0B6NYXML._SL1500_.jpg',
-    type: 'Romance'
-  });
+    this.contentList = new ContentList();
 
   this.contentList.add({
     id: 2,

@@ -1,18 +1,14 @@
 import { Content } from './content-interface';
 class ContentList {
-    private _items: Content[];
-    static contentCount =0;
-    constructor(item: Content) {
-    this._items = []; // initialize array
-    this._items[0] = item;
-    this.increaseCount();
-    }
-    get items(): Content[] {
+    private _items: Content[] =[];
+    constructor() {}
+    get items(): Content[]
+     {
         return this._items;
       }
-    increaseCount() {
-    return ContentList.contentCount++;
-    }
+    add(contentItem: Content){
+        this._items.push(contentItem);
+      }
     numberOfItem() : number {
         return this._items.length;
     }
@@ -29,16 +25,13 @@ class ContentList {
         <p>Description: ${conItem.description}</p>
         <p>Creator: ${conItem.creator}</p>
         <p>Type: ${conItem.type}</p>
-        <img src = "${conItem.imgUrl}">
+        <img src = "${conItem.imgUrl} " alt="${conItem.title}">
         </div>`;
         }
         else {
             return ('Index out of bounds');
         }
     }
-    add(contentItem: Content){
-        this._items.push(contentItem);
-      }
-    }
+}
     export {ContentList};
     
