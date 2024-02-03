@@ -1,13 +1,16 @@
 // content-list.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.css']
 })
-export class ContentListComponent {
-  contentList = [
+export class ContentListComponent implements OnInit{
+    ngOnInit() {
+    }
+    contentList :Content[]= [
     {
       id: 1,
       title: 'The Alchemist',
@@ -15,7 +18,7 @@ export class ContentListComponent {
       creator: 'Paulo Coelho',
       imgUrl: 'https://th.bing.com/th/id/OIP.VstFlWVjoGA72T1UYfjYkwHaL9?rs=1&pid=ImgDetMain',
       type: 'Philosophical',
-      tags: [1, 2]
+      tags: ['1', '2']
     },
     {
       id: 2,
@@ -24,7 +27,7 @@ export class ContentListComponent {
       creator: 'Colleen Hoover',
       imgUrl: 'https://th.bing.com/th/id/R.c1e40ff37e3d96213b709aab0a6d8178?rik=0XEMC7MQYpBytw&pid=ImgRaw&r=0',
       type: 'Romance',
-      tags: [3, 4]
+      tags: ['3', '4']
     },
     {
       id: 3,
@@ -47,7 +50,7 @@ export class ContentListComponent {
       creator: 'F. Scott Fitzgerald',
       imgUrl: 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982146702/the-great-gatsby-9781982146702_xlg.jpg',
       type: 'Classic',
-      tags: [5, 6]
+      tags: ['5', '6']
     },
     {
       id: 6,
@@ -56,7 +59,7 @@ export class ContentListComponent {
       creator: 'Douglas Adams',
       type: 'Science Fiction',
       imgUrl: 'https://images.thenile.io/r1000/9780345418913.jpg',
-      tags: [7, 8]
+      tags: ['7', '8']
     },
     {
       id: 7,
@@ -65,19 +68,17 @@ export class ContentListComponent {
       creator: 'Harper Lee',
       imgUrl: 'https://th.bing.com/th/id/OIP.W1ngiF2AkQaO78CY9yC1HQHaLd?rs=1&pid=ImgDetMain',
       type: 'Classic',
-      tags: [9, 10]
+      tags: ['9', '1']
     },
     {
       id: 8,
       title: 'Sapiens: A Brief History of Humankind',
       description: 'A popular science book by Yuval Noah Harari',
       creator: 'Yuval Noah Harari',
-      imgUrl: 'https://th.bing.com/th/id/OIP.mQxDdzsaRLLxfWTI28ooUQHaIp?rs=1&pid=ImgDetMain',
-      tags: [11, 12]
-    }
+      imgUrl: 'https://th.bing.com/th/id/OIP.mQxDdzsaRLLxfWTI28ooUQHaIp?rs=1&pid=ImgDetMain'
+        }
   ];
 
-  displayWhenClicked(id: number, title: string) {
-    console.log(` Youj clicked on the content with ID: ${id} and Title: ${title}`);
-  }
+
+
 }

@@ -1,11 +1,4 @@
-<!--ngFor is used as a for loop to display the content while first-card gets the value of the content-card at the position of 0
- We used click event for displaying the info-->
-<div *ngFor="let item of contentList; let i = index" class="content-card" [ngClass]="{'first-card': i === 0}" (click)="displayWhenClicked(item.id, item.title)">
-  <h2>{{ item.title }}</h2>
-  <img *ngIf="item.imgUrl"  class="images" [src]="item.imgUrl" alt="Content Image">
-  <p *ngIf="item.description">This Book describes: {{ item.description }}</p>
-  <p *ngIf="item.creator">Author: {{ item.creator }}</p>
-  <p *ngIf="item.type">Type of Book: {{ item.type }}</p>
-  <!--The below one is used to disply the array of tags in array form-->
-  <p *ngIf="item.tags && item.tags.length > 0">Tags: {{ item.tags.join(', ') }}</p>
+<!-- content-list.component.html -->
+<div *ngFor="let contentItem of contentList; let i = index" class="content-card card-{{i + 1}}">
+  <app-content-card [content]="contentItem"></app-content-card>
 </div>

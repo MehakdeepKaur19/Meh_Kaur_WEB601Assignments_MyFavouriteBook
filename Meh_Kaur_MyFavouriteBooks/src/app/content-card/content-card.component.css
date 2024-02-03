@@ -1,0 +1,14 @@
+/* content-list.component.css */
+.content-card {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .first-card {
+    border: 2px solid #000;
+  }
+  .images{
+    width: 10%;
+    height: 10%;
+  }
