@@ -6,5 +6,6 @@ export interface Content{
     imgUrl?: string;
     type?: string;
     tags?: string[];
+    isSelected?: boolean;
     }
     

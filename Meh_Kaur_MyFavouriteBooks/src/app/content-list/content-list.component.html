@@ -1,4 +1,35 @@
-<!-- content-list.component.html -->
-<div *ngFor="let contentItem of contentList; let i = index" class="content-card card-{{i + 1}}">
-  <app-content-card [content]="contentItem"></app-content-card>
+<div>
+  <input [(ngModel)]="searchTitle" placeholder="Enter Content Title" />
+  <button (click)="searchContent()">Search</button>
+  <div [style.color]="searchResultColor">
+    {{ searchResultMessage }}
+  </div>
+</div>
+
+<div>
+  <h2>Content with No Type</h2>
+  <div *ngFor="let content of contents | contentTypeFilter: ''">
+    <app-content-card [content]="content"></app-content-card>
+  </div>
+</div>
+
+<div>
+  <h2>Philosophical Content</h2>
+  <div *ngFor="let content of contents | contentTypeFilter: 'Philosophical'; let i = index" [ngClass]="{'first-card': i === 0}">
+    <app-content-card [content]="content"></app-content-card>
+  </div>
+</div>
+
+<div>
+  <h2>Romance Content</h2>
+  <div *ngFor="let content of contents | contentTypeFilter: 'Romance'; let i = index" [ngClass]="{'first-card': i === 0}">
+    <app-content-card [content]="content"></app-content-card>
+  </div>
+</div>
+
+<div>
+  <h2>Classic Content</h2>
+  <div *ngFor="let content of contents | contentTypeFilter: 'Classic'; let i = index" [ngClass]="{'first-card': i === 0}">
+    <app-content-card [content]="content"></app-content-card>
+  </div>
 </div>

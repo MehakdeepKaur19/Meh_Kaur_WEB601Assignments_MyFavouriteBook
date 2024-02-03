@@ -1,8 +1,8 @@
 <!--ngFor is used as a for loop to display the content while first-card gets the value of the content-card at the position of 0
  We used click event for displaying the info-->
- <div class="content-card" (click)="displayContentInfo()">
+ <div class="content-card"  [ngStyle]="getCardStyles()" [class.selected]="content.isSelected"  (click)="displayContentInfo()">
     <h2>{{ content.title }}</h2>
-    <img *ngIf="content.imgUrl" src="{{ content.imgUrl }}" alt="{{ content.title }}">
+    <img *ngIf="content.imgUrl" class="images" src="{{ content.imgUrl }}" alt="{{ content.title }}">
     <p *ngIf="content.description">Description: {{ content.description }}</p>
     <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
     <p *ngIf="content.type">Type: {{ content.type }}</p>

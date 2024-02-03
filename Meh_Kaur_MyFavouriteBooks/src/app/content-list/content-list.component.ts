@@ -9,8 +9,9 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit{
     ngOnInit() {
+      this.contents.forEach(content => content.isSelected = false);
     }
-    contentList :Content[]= [
+    contents :Content[]= [
     {
       id: 1,
       title: 'The Alchemist',
@@ -78,7 +79,23 @@ export class ContentListComponent implements OnInit{
       imgUrl: 'https://th.bing.com/th/id/OIP.mQxDdzsaRLLxfWTI28ooUQHaIp?rs=1&pid=ImgDetMain'
         }
   ];
+  searchTitle: string = ''; 
+  searchResultMessage: string = ''; 
+  searchResultColor: string = ''; 
+  searchContent() {
+    let contentExists = this.contents.some(content => content.title === this.searchTitle);
 
-
-
+    if (contentExists) {
+      this.searchResultMessage = 'Content item exists!';
+      this.searchResultColor = 'green';
+      let selectedContent = this.contents.find(content => content.title === this.searchTitle);
+      if (selectedContent) {
+        selectedContent.isSelected = true;
+   
+      }
+    } else {
+      this.searchResultMessage = 'Content item does not exist!';
+      this.searchResultColor = 'red';
+    }
+  }
 }

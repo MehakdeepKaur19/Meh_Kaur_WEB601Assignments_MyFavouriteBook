@@ -1,14 +1,30 @@
-/* content-list.component.css */
 .content-card {
-    border: 1px solid #000;
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  .first-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+}
+
+.content-card.selected {
+  border: 2px solid green;
+  background-color: black;
+  color: aliceblue;
+}
+
+/* .content-card[ng-reflect-content-type='Philosophical'] {
+  background-color: bisque; 
+}
+
+.content-card[ng-reflect-content-type='Romance'] {
+  background-color: palevioletred; 
+}
+
+.content-card[ng-reflect-content-type='Classic'] {
+  background-color: rgb(107, 145, 4); 
+} */
+.first-card {
     border: 2px solid #000;
   }
-  .images{
+.images{
     width: 10%;
     height: 10%;
   }
