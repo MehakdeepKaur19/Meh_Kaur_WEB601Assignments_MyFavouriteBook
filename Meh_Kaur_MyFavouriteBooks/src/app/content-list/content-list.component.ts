@@ -1,6 +1,7 @@
 // content-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-content-list',
@@ -83,7 +84,7 @@ export class ContentListComponent implements OnInit{
   searchResultMessage: string = ''; 
   searchResultColor: string = ''; 
   searchContent() {
-    let contentExists = this.contents.some(content => content.title === this.searchTitle);
+    let contentExists = this.contents.some(content => content.title.toLowerCase() === this.searchTitle.toLowerCase());
 
     if (contentExists) {
       this.searchResultMessage = 'Content item exists!';
@@ -91,7 +92,6 @@ export class ContentListComponent implements OnInit{
       let selectedContent = this.contents.find(content => content.title === this.searchTitle);
       if (selectedContent) {
         selectedContent.isSelected = true;
-   
       }
     } else {
       this.searchResultMessage = 'Content item does not exist!';

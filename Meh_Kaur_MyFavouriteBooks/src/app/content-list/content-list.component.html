@@ -15,7 +15,7 @@
 
 <div>
   <h2>Philosophical Content</h2>
-  <div *ngFor="let content of contents | contentTypeFilter: 'Philosophical'; let i = index" [ngClass]="{'first-card': i === 0}">
+  <div *ngFor="let content of contents | contentTypeFilter: 'Philosophical'; let i = index" >
     <app-content-card [content]="content"></app-content-card>
   </div>
 </div>

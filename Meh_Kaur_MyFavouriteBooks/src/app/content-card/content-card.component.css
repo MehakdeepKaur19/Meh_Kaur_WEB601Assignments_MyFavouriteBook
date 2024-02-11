@@ -4,9 +4,9 @@
   margin: 10px;
 }
 
-.content-card.selected {
+.selected {
   border: 2px solid green;
-  background-color: black;
+  background-color: black !important;
   color: aliceblue;
 }
 
