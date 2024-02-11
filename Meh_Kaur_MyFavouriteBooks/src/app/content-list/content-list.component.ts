@@ -18,7 +18,6 @@ export class ContentListComponent implements OnInit{
       title: 'The Alchemist',
       description: 'A philosophical novel by Paulo Coelho',
       creator: 'Paulo Coelho',
-      imgUrl: 'https://th.bing.com/th/id/OIP.VstFlWVjoGA72T1UYfjYkwHaL9?rs=1&pid=ImgDetMain',
       type: 'Philosophical',
       tags: ['1', '2']
     },
