@@ -1,7 +1,6 @@
 <!-- ngFor is used as a for loop to display the content while first-card gets the value of the content-card at the position of 0
  We used click event for displaying the info-->
-<!-- content-card.component.html -->
-<div class="content-card" appHoverAffect="underline">
+<div class="content-card" appHoverAffect="underline border">
   <h2>{{ content.title }}</h2>
   <img *ngIf="content.imgUrl; else defaultImage" class="images" [src]="content.imgUrl" alt="{{ content.title }}">
   <ng-template #defaultImage>

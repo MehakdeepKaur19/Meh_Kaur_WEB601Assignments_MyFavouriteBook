@@ -1,41 +1,35 @@
-import { Directive, ElementRef, Renderer2, HostListener, Input } from '@angular/core';
+// hover-affect.directive.ts
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHoverAffect]'
 })
 export class HoverAffectDirective {
-  @Input('appHoverAffect') affectType: string | undefined; // Input to specify the type of affect (underline, bold, border)
-
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-    console.log('Hover-Affect Directive Applied:', el.nativeElement);
-  }
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.applyAffect(true);
+    const style = this.el.nativeElement.getAttribute('appHoverAffect');
+    if (style.includes('underline')) {
+      this.renderer.setStyle(this.el.nativeElement, 'text-decoration', 'underline');
+    }
+    if (style.includes('bold')) {
+      this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold');
+    }
+    if (style.includes('border')) {
+      this.renderer.setStyle(this.el.nativeElement, 'border', '2px solid red');
+    }
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.applyAffect(false);
-  }
-
-  public applyAffect(isHovered: boolean): void {
-    switch (this.affectType) {
-      case 'underline':
-        this.renderer.setStyle(this.el.nativeElement, 'text-decoration', isHovered ? 'underline' : 'none');
-        break;
-      case 'bold':
-        this.renderer.setStyle(this.el.nativeElement, 'font-weight', isHovered ? 'bold' : 'normal');
-        break;
-      case 'border':
-        const parentElement = this.el.nativeElement.parentElement;
-        const isFirstOrLast = parentElement && (
-          parentElement.firstElementChild === this.el.nativeElement ||
-          parentElement.lastElementChild === this.el.nativeElement
-        );
-        this.renderer.setStyle(this.el.nativeElement, 'border', isHovered && isFirstOrLast ? '2px solid red' : 'none');
-        break;
-      default:
-        break;
+    const style = this.el.nativeElement.getAttribute('appHoverAffect');
+    if (style.includes('underline')) {
+      this.renderer.removeStyle(this.el.nativeElement, 'text-decoration');
+    }
+    if (style.includes('bold')) {
+      this.renderer.removeStyle(this.el.nativeElement, 'font-weight');
+    }
+    if (style.includes('border')) {
+      this.renderer.removeStyle(this.el.nativeElement, 'border');
     }
   }
 }
