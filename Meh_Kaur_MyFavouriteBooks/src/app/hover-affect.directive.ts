@@ -2,7 +2,8 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appHoverAffect]'
+  selector: '[appHoverAffect]',
+  // standalone: true
 })
 export class HoverAffectDirective {
   constructor(private el: ElementRef, private renderer: Renderer2) {}

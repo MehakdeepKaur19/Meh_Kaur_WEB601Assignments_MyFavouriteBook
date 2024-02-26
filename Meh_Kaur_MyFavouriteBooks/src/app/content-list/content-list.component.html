@@ -7,7 +7,6 @@
 </div>
 
 <div>
-  <h2>Content with No Type</h2>
   <div *ngFor="let content of contents | contentTypeFilter: ''">
     <app-content-card [content]="content"></app-content-card>
   </div>
