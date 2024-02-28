@@ -97,4 +97,8 @@ export class ContentListComponent implements OnInit{
       this.searchResultColor = 'red';
     }
   }
+  onContentCreated(newContent: any) {
+    // Simulate content addition
+    this.contents.push({ ...newContent }); // Clone the content
+  }
 }
