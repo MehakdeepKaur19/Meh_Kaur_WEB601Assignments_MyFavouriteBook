@@ -98,7 +98,7 @@ export class ContentListComponent implements OnInit{
     }
   }
   onContentCreated(newContent: any) {
-    // Simulate content addition
-    this.contents.push({ ...newContent }); // Clone the content
+    // Add the new content to the list of contents
+    this.contents.push({ ...newContent });
   }
 }

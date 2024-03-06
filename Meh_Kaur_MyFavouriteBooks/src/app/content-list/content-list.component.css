@@ -3,3 +3,12 @@
     width: 10%;
     height: 10%;
   }
+div:nth-child(1){
+  background-color: lightblue;
+}
+app-create-content{
+  border: 0.2cm solid white;
+  display: block;
+  margin: 1%;
+  padding:2%;
+}

@@ -44,7 +44,7 @@ export class CreateContentComponent {
       }
     });
 
-    // Handle promise resolution/rejection
+    // Handle the result of the promise using .then() and .catch() methods
     promise
       .then(() => console.log('Promise resolved')) // Success function
       .catch((error) => {

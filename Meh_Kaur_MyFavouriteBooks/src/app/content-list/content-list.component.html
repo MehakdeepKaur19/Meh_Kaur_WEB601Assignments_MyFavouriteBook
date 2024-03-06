@@ -1,4 +1,5 @@
 <div>
+  <div>
   <input [(ngModel)]="searchTitle" placeholder="Enter Content Title" />
   <button (click)="searchContent()">Search</button>
   <div [style.color]="searchResultColor">
@@ -11,6 +12,7 @@
   <div *ngFor="let content of contents">
     <app-content-card [content]="content"></app-content-card>
   </div>
+</div>
 </div>
 
 <!-- <div>

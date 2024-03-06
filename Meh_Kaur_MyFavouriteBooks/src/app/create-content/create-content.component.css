@@ -1,0 +1,11 @@
+div{
+    padding-bottom: 1%;
+}
+input{
+    width: 20%;
+}
+label{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+}
