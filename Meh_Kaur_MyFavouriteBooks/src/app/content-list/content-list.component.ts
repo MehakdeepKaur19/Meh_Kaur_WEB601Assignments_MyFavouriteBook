@@ -1,8 +1,7 @@
-// content-list.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Content } from '../helper-files/content-interface';
-import { contentArray } from '../helper-files/contentDb';  
-import { style } from '@angular/animations';
+import { Content } from '../helper-files/content-interface'; // Add this import statement
+import { contentArray } from '../helper-files/contentDb';
+import { BookServiceService } from '../book-service.service';
 
 @Component({
   selector: 'app-content-list',
@@ -11,6 +10,12 @@ import { style } from '@angular/animations';
 })
 export class ContentListComponent implements OnInit {
   contents: Content[] = contentArray;
+
+  constructor(private bookServiceService: BookServiceService) {
+    this.bookServiceService.getContentArray().subscribe(data => {
+      this.contents = data;
+    });
+  }
 
   ngOnInit() {
     this.contents.forEach(content => content.isSelected = false);
