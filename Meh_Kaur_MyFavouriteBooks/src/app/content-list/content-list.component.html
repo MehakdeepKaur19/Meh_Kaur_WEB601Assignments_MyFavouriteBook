@@ -1,10 +1,10 @@
-<div>
+<!-- <div>
   <input [(ngModel)]="searchTitle" placeholder="Enter Content Title" />
   <button (click)="searchContent()">Search</button>
   <div [style.color]="searchResultColor">
     {{ searchResultMessage }}
   </div>
-</div>
+</div> -->
 
 <div>
   <div *ngFor="let content of contents | contentTypeFilter: ''">

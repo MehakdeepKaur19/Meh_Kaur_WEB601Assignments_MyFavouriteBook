@@ -5,7 +5,7 @@ import { contentArray } from './helper-files/contentDb';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Corrected property name
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   title = 'Meh_Kaur_MyFavouriteBooks';
@@ -16,19 +16,26 @@ export class AppComponent implements OnInit {
   constructor(private bookServiceService: BookServiceService) {}
 
   ngOnInit(): void {
-    this.bookServiceService.getSingleContentItem(1).subscribe(item => {
-      this.singleContentItem = item;
-    });
+    this.loadSingleContent(1);
   }
-  
+
+  loadSingleContent(id: number): void {
+    this.bookServiceService.getSingleContentItem(id).subscribe(
+      item => {
+        this.singleContentItem = item;
+      },
+      error => {
+        console.error('Error occurred while loading single content:', error);
+      }
+    );
+  }
+
   getContentItem(): void {
     if (this.selectedId === undefined || !Number.isInteger(this.selectedId) || this.selectedId <= 0 || this.selectedId > contentArray.length) {
       this.errorMessage = 'Invalid id entered.';
     } else {
       this.errorMessage = '';
-      this.bookServiceService.getSingleContentItem(this.selectedId).subscribe(item => {
-        this.singleContentItem = item;
-      });
+      this.loadSingleContent(this.selectedId);
     }
   }
 }
