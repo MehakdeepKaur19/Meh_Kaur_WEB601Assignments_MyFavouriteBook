@@ -21,6 +21,10 @@ export class ContentListComponent implements OnInit {
     this.contents.forEach(content => content.isSelected = false);
   }
 
+      
+  onContentAdded(addedContent: Content) {
+    this.contents.push(addedContent); // Add the new content to the list
+  } 
   searchTitle: string = '';
   searchResultMessage: string = '';
   searchResultColor: string = '';

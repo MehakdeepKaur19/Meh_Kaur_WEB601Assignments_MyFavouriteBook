@@ -5,14 +5,14 @@
     {{ searchResultMessage }}
   </div>
 </div> -->
-
+<app-modify-content (contentAdded)="onContentAdded($event)"></app-modify-content>
 <div>
-  <div *ngFor="let content of contents | contentTypeFilter: ''">
+  <div *ngFor="let content of contents">
     <app-content-card [content]="content"></app-content-card>
   </div>
 </div>
 
-<div>
+<!-- <div>
   <h2>Philosophical Content</h2>
   <div *ngFor="let content of contents | contentTypeFilter: 'Philosophical'; let i = index" >
     <app-content-card [content]="content"></app-content-card>
@@ -31,4 +31,4 @@
   <div *ngFor="let content of contents | contentTypeFilter: 'Classic'; let i = index" [ngClass]="{'first-card': i === 0}">
     <app-content-card [content]="content"></app-content-card>
   </div>
-</div>
+</div> -->
